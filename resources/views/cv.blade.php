@@ -143,6 +143,7 @@
                         <li>Jogging</li>
 
             <div class="section-title">Motto Hidup</div>
+                <div class="section-content">
 
                         <li>Satu Musuh Terlalu Banyak,Seribu Teman Terlalu SSedikit</li>
                 </div>

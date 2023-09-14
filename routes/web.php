@@ -21,5 +21,8 @@ Route::get('/', function () {
 Route::get('/cv', function () {
     return view('cv');
 });
+Route::get('/profile_paeja', function () {
+    return view('profile_paeja');
+});
 
 Route::get('/koneksi', [TestKoneksiController::class, 'index']);
