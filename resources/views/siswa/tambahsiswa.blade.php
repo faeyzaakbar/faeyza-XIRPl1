@@ -23,7 +23,7 @@
     <input type="text" name="jenis_kelamin" required>
 
     <label for="tanggal_lahir">tanggal lahir:</label>
-    <input type="text" name="tanggal_lahir" required>
+    <input type="date" name="tanggal_lahir" required>
 
     <!-- Tambahkan input lainnya sesuai kebutuhan -->
 
