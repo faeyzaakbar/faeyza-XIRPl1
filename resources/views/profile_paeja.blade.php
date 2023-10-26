@@ -13,7 +13,8 @@
             <li class="nav-item"><a href="#">Home</a></li>
             <li class="nav-item"><a href="#">About</a></li>
             <li class="nav-item"><a href="#">Portofolio</a></li>
-            <li class="nav-item"><a href="cv">cv</a></li>
+            <li class="nav-item"><a href="cv">cv </a></li>
+            <li class="nav-item"><a href="koneksi">siswa </a></li>
         </ul>
     </nav>
 
@@ -26,7 +27,7 @@
 
     <div class="about-me">
         <div class="wrapper-about">
-        <h2>About</h2>
+        <h1>About</h1>
     <p>Haii! Saya Mochammad Faeyza A,lahir Pada Tanggal 22 November 2006. Saya Memiliki Empat Minat Utama Dalam Hidup Saya. Pertama, Saya Sangat Menyukai Bermain Game, Di Mana Saya Menemukan Kesenangan Dalam Menjelajahi Dunia Virtual, Bersaing Secara Daring. Kedua, Saya Adalah Penggemar Berat Film, Saya Menikmati Berbagai Jenis Film Dan Suka Menceritakan Yang Seru Dengan Teman-Teman. Ketiga, Olahraga Adalah Bagian Penting Dalam Hidup Saya. Bermain Futsa Dan Bersepeda Adalah Cara Saya Menjaga Tubuh Tetap Sehat Dan Bugar Serta Meredakan Stres. Dan Terakhir Saya Menyukai Hal Otomotif Seperti Motor Dan Mobil, Namun Saya Lebih Suka Kepada Motor Karna Sehari Hari MEnggunakan Motor. Saya Percaya Bahwa Minat Dan Hobi Ini Membantu Saya Menjalani Kehidupan Yang Berwarna Dan Seimbang</p>
         </div>
     </div>
