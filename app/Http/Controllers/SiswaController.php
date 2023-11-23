@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Siswa;
+use Illuminate\Validation\Rule;
 
 class SiswaController extends Controller
 {
@@ -11,6 +12,7 @@ class SiswaController extends Controller
         $siswa = Siswa::all();
         return view('siswa/daftarsiswa', compact('siswa'));
     }
+
     public function createForm()
     {
         return view('siswa/tambahsiswa');
@@ -19,14 +21,21 @@ class SiswaController extends Controller
     public function create(Request $request)
     {
         // Validasi data form
-        $request->validate([
-            'nis' => 'required',
+        $customMessages = [
+            'nis.unique' => 'NIS sudah ada, harap pakai yang lain',
+        ];
+
+        $this->validate($request, [
+            'nis' => [
+                'required',
+                'min:8',
+                Rule::unique('siswa', 'nis'),
+            ],
             'nama' => 'required',
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
             'tanggal_lahir' => 'required',
-            // tambahkan validasi lainnya sesuai kebutuhan
-        ]);
+        ], $customMessages);
 
         // Simpan data ke database
         Siswa::create($request->all());
@@ -34,10 +43,10 @@ class SiswaController extends Controller
         // Redirect atau tampilkan pesan sukses
         return redirect()->route('daftarsiswa')->with('success', 'Data berhasil disimpan!');
     }
+
     public function editForm($id)
     {
         $siswa = Siswa::find($id);
-
         return view('siswa/editsiswa', compact('siswa'));
     }
 
@@ -45,12 +54,14 @@ class SiswaController extends Controller
     {
         // Validasi data
         $request->validate([
-            'nis' => 'required',
+            'nis' => ['required', Rule::unique('siswa', 'nis')->ignore($id)],
             'nama' => 'required',
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
             'tanggal_lahir' => 'required',
             // tambahkan validasi untuk kolom lainnya
+        ], [
+            'nis.unique' => 'NIS sudah terpakai',
         ]);
 
         // Ambil data pengguna dari database
@@ -67,6 +78,6 @@ class SiswaController extends Controller
         $siswa = Siswa::find($id);
         $siswa->delete();
 
-        return redirect()->route('daftarsiswa')->with('success', 'data berhasil dihapus');
+        return redirect()->route('daftarsiswa')->with('success', 'Data berhasil dihapus');
     }
 }
